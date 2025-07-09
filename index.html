@@ -32,8 +32,14 @@
   let medicineData = [];
 
   function init() {
-    Tabletop.init({
-    key: key: '1R_XIgSPvb_XBWWvNU9fczjJbHCB2CjA8L4Zvt37MdLo',
+   Tabletop.init({
+  key: '2PACX-1vTcdr_hnGC1b9k4eCKj7zGjiSa5Jn5NPFo3aAlAmcBjOE0tiPWfQn5VyRerhiSxPIucSEOoEq7pUzH1',
+  callback: function(data) {
+    medicineData = data;
+  },
+  simpleSheet: true
+});
+
 
 
       callback: function(data) {
