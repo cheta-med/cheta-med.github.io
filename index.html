@@ -2,12 +2,13 @@
 <html>
 <head>
   <title>Medicine Info App</title>
-  <meta charset="UTF‑8">
+  <meta charset="UTF-8" />
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f2f2f2;
-      padding: 20px; text-align: center;
+      padding: 20px;
+      text-align: center;
     }
     .search-group {
       display: inline-flex;
@@ -68,9 +69,8 @@
   <script>
     let medicineData = [];
 
-    // Initialize data retrieval
     Tabletop.init({
-      key: '1R_XIgSPvb_XBWWvNU9fczjJbHCB2CjA8L4Zvt37MdLo',
+      key: '1ZskOBQHyop6f4NaCBuBuA8Ikzbg0t6s1N6gXk9WjDE0',
       callback: function(data) {
         medicineData = data;
       },
@@ -81,7 +81,6 @@
     const searchBtn = document.getElementById('searchBtn');
     const resultsDiv = document.getElementById('results');
 
-    // Trigger search on button click or Enter key
     searchBtn.addEventListener('click', searchMedicine);
     searchBox.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') searchMedicine();
@@ -119,11 +118,6 @@
       }
     }
   </script>
-
-  <!-- Your embedded sheet, if needed below -->
-  <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTcdr_hnGC1b9k4eCKj7zGjiSa5Jn5NPFo3aAlAmcBjOE0tiPWfQn5VyRerhiSxPIucSEOoEq7pUzH1/pubhtml?widget=true&amp;headers=false"
-          width="0" height="0" style="visibility:hidden;"></iframe>
-
 </body>
 </html>
 
