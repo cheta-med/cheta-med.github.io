@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedFinder - Indian Medicine Database</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💊 MedFinder</h1>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for medicines...">
+                <button id="searchBtn">Search</button>
+            </div>
+        </header>
+
+        <div class="results-container">
+            <div class="medicine-card template">
+                <h3 class="med-name">Medicine Name</h3>
+                <p class="generic">Generic: <span></span></p>
+                <p class="manufacturer">Manufacturer: <span></span></p>
+                <p class="uses">Uses: <span></span></p>
+                <button class="details-btn">View Details</button>
+            </div>
+        </div>
+
+        <div class="medicine-details" id="detailsModal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="detail-name"></h2>
+                <div class="detail-row">
+                    <span class="label">Generic Name:</span>
+                    <span id="detail-generic"></span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Manufacturer:</span>
+                    <span id="detail-manufacturer"></span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Dosage Form:</span>
+                    <span id="detail-dosage"></span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Uses:</span>
+                    <span id="detail-uses"></span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Side Effects:</span>
+                    <span id="detail-side-effects"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
