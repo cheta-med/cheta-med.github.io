@@ -55,20 +55,15 @@
     window.addEventListener('DOMContentLoaded', init);
 
     function init() {
-   Tabletop.init({
-  key: '1R_XIgSPvb_XBWWvNU9fczjJbHCB2CjA8L4Zvt37MdLo',
-  callback: showInfo,
+Tabletop.init({
+  key: '1MFlp8cHfJqCg-vTKd7C6pRoxuAvUzYsmzELb1Ld8hNU',
+  callback: function(data) {
+    medicineData = data;
+    document.getElementById("searchBox").addEventListener("input", searchMedicine);
+    document.getElementById("language").addEventListener("change", searchMedicine);
+  },
   simpleSheet: true
 });
-
-        callback: function(data) {
-          medicineData = data;
-          document.getElementById("searchBox").addEventListener("input", searchMedicine);
-          document.getElementById("language").addEventListener("change", searchMedicine);
-        },
-        simpleSheet: true
-      });
-    }
 
     function searchMedicine() {
       const lang = document.getElementById("language").value;
