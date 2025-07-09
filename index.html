@@ -53,17 +53,18 @@
       row.Name.toLowerCase().includes(query)
     );
 
-    matches.forEach(row => {
-      results.innerHTML += `
-        <div class="card">
-          <h3>${row.Name}</h3>
-          <p><strong>Use:</strong> ${row.Use}</p>
-          <p><strong>Dosage:</strong> ${row.Dosage}</p>
-          <p><strong>Side Effects:</strong> ${row.SideEffects}</p>
-          <p><strong>Warning:</strong> ${row.Warning}</p>
-          <p><strong>Manufacturer:</strong> ${row.Manufacturer}</p>
-        </div>`;
-    });
+matches.forEach(row => {
+  results.innerHTML += `
+    <div class="card">
+      <h3>${row.Name}</h3>
+      ${row.ImageURL ? `<img src="${row.ImageURL}" style="max-width:100px; border-radius:8px; margin:10px 0;">` : ''}
+      <p><strong>Use:</strong> ${row.Use}</p>
+      <p><strong>Dosage:</strong> ${row.Dosage}</p>
+      <p><strong>Side Effects:</strong> ${row.SideEffects}</p>
+      <p><strong>Warning:</strong> ${row.Warning}</p>
+      <p><strong>Manufacturer:</strong> ${row.Manufacturer}</p>
+    </div>`;
+});
 
     if (matches.length === 0 && query.length > 0) {
       results.innerHTML = "<p>No matching medicine found in this language.</p>";
