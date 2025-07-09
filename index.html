@@ -55,8 +55,12 @@
     window.addEventListener('DOMContentLoaded', init);
 
     function init() {
-      Tabletop.init({
-        key: '1R_XIgSPvb_XBWWvNU9fczjJbHCB2CjA8L4Zvt37MdLo',
+   Tabletop.init({
+  key: '1R_XIgSPvb_XBWWvNU9fczjJbHCB2CjA8L4Zvt37MdLo',
+  callback: showInfo,
+  simpleSheet: true
+});
+
         callback: function(data) {
           medicineData = data;
           document.getElementById("searchBox").addEventListener("input", searchMedicine);
