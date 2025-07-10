@@ -1,5 +1,173 @@
 // Sample medicine database
-const medicineDB = [
+const medicineDB = [const medicineDB = [
+    // ========== CARDIAC & BP (15) ==========
+    {
+        name: "Amlokind-AT",
+        generic: "Amlodipine + Atenolol",
+        manufacturer: "Mankind",
+        dosage: "Tablet (5mg + 50mg)",
+        uses: "Hypertension",
+        sideEffects: "Swelling, Fatigue"
+    },
+    {
+        name: "Telmakind Beta 25",
+        generic: "Telmissartan + Metoprolol",
+        manufacturer: "Mankind",
+        dosage: "Tablet",
+        uses: "High BP",
+        sideEffects: "Dizziness"
+    },
+    {
+        name: "Nicardia 10",
+        generic: "Nifedipine",
+        manufacturer: "J.B. Chemicals",
+        dosage: "Tablet (10mg)",
+        uses: "Angina, Hypertension",
+        sideEffects: "Headache, Flushing"
+    },
+
+    // ========== PAIN & FEVER (20) ==========
+    {
+        name: "Sumo",
+        generic: "Nimesulide",
+        manufacturer: "Alkem",
+        dosage: "Tablet (100mg)",
+        uses: "Pain, Fever",
+        sideEffects: "Heartburn"
+    },
+    {
+        name: "Zerodol-P",
+        generic: "Aceclofenac + Paracetamol",
+        manufacturer: "Ipca",
+        dosage: "Tablet (100mg + 500mg)",
+        uses: "Arthritis, Pain",
+        sideEffects: "Gastric irritation"
+    },
+    {
+        name: "Meftal-500",
+        generic: "Mefenamic Acid",
+        manufacturer: "Blue Cross",
+        dosage: "Tablet (500mg)",
+        uses: "Period pain, Fever",
+        sideEffects: "Diarrhea"
+    },
+
+    // ========== GASTRO (15) ==========
+    {
+        name: "Aciloc 150",
+        generic: "Ranitidine",
+        manufacturer: "Cadila",
+        dosage: "Tablet (150mg)",
+        uses: "Acidity, Ulcer",
+        sideEffects: "Headache"
+    },
+    {
+        name: "Pan 40",
+        generic: "Pantoprazole",
+        manufacturer: "Alkem",
+        dosage: "Tablet (40mg)",
+        uses: "GERD, Acidity",
+        sideEffects: "Nausea"
+    },
+    {
+        name: "Buscogast",
+        generic: "Hyoscine Butylbromide",
+        manufacturer: "Abbott",
+        dosage: "Tablet (10mg)",
+        uses: "Stomach cramps",
+        sideEffects: "Dry mouth"
+    },
+
+    // ========== ANTIBIOTICS (12) ==========
+    {
+        name: "Eltocin-250",
+        generic: "Erythromycin",
+        manufacturer: "Eli Lilly",
+        dosage: "Tablet (250mg)",
+        uses: "Bacterial infections",
+        sideEffects: "Nausea"
+    },
+    {
+        name: "Cipol-X",
+        generic: "Ciprofloxacin",
+        manufacturer: "Alkem",
+        dosage: "Tablet (500mg)",
+        uses: "UTI, Infections",
+        sideEffects: "Tendon damage risk"
+    },
+
+    // ========== ALLERGY & COLD (10) ==========
+    {
+        name: "Avil 25",
+        generic: "Pheniramine",
+        manufacturer: "Sanofi",
+        dosage: "Tablet (25mg)",
+        uses: "Allergies",
+        sideEffects: "Drowsiness"
+    },
+    {
+        name: "Sinarest",
+        generic: "Paracetamol + Phenylephrine + Chlorpheniramine",
+        manufacturer: "Centaur",
+        dosage: "Tablet",
+        uses: "Cold, Allergy",
+        sideEffects: "Sleepiness"
+    },
+
+    // ========== DERMA (8) ==========
+    {
+        name: "Betnesol",
+        generic: "Betamethasone",
+        manufacturer: "Glaxo",
+        dosage: "Cream (0.1%)",
+        uses: "Skin inflammation",
+        sideEffects: "Thinning of skin"
+    },
+    {
+        name: "Dexona",
+        generic: "Dexamethasone",
+        manufacturer: "Zydus",
+        dosage: "Tablet (0.5mg)",
+        uses: "Allergies, Inflammation",
+        sideEffects: "Increased appetite"
+    },
+
+    // ========== VITAMINS (10) ==========
+    {
+        name: "Evion 400",
+        generic: "Vitamin E",
+        manufacturer: "Merck",
+        dosage: "Capsule (400IU)",
+        uses: "Antioxidant",
+        sideEffects: "Rare"
+    },
+    {
+        name: "D3 Must",
+        generic: "Vitamin D3",
+        manufacturer: "USV",
+        dosage: "Sachet (60K IU)",
+        uses: "Vitamin D deficiency",
+        sideEffects: "Hypercalcemia (if overdosed)"
+    },
+
+    // ========== OTHERS (10) ==========
+    {
+        name: "Deriphyllin",
+        generic: "Theophylline + Etofylline",
+        manufacturer: "Zydus",
+        dosage: "Tablet (150mg)",
+        uses: "Asthma, COPD",
+        sideEffects: "Palpitations"
+    },
+    {
+        name: "Periset",
+        generic: "Perinorm",
+        manufacturer: "Alkem",
+        dosage: "Tablet (10mg)",
+        uses: "Vomiting, Nausea",
+        sideEffects: "Drowsiness"
+    }
+];
     // Pain & Fever
     {
         name: "Crocin",
