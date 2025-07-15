@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us - Curevoa</title>
+</head>
+<body>
+  <h1>About Curevoa</h1>
+  <p>Curevoa is a free and easy-to-use online platform created to help people understand the medicines they use every day. Whether you're looking for dosage information, side effects, or brand alternatives, Curevoa makes it easy for you to find accurate and reliable information in seconds.</p>
+  
+  <p>We aim to bridge the gap between complex medical terms and easy language for the common person. Our data is compiled from trusted public sources, pharmacist input, and published drug literature.</p>
+  
+  <p>Our mission is to:
+    <ul>
+      <li>Provide trustworthy medicine information</li>
+      <li>Promote medicine safety awareness</li>
+      <li>Support regional language access to medical knowledge</li>
+    </ul>
+  </p>
+
+  <p>Curevoa is not a pharmacy and we do not sell medicines. We encourage users to always consult their doctor before making any decisions related to medicine use.</p>
+</body>
+</html>
