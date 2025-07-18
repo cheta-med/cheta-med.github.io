@@ -365,6 +365,287 @@
     <script>
         // Expanded Medicine Database (150+ Indian Medicines)
         const medicineDB = [
+            // ========== PAIN & FEVER (10 more) ==========
+{
+    name: "Parcetamol",
+    generic: "Paracetamol",
+    manufacturer: "Cipla",
+    dosage: "Tablet (500mg)",
+    uses: "Fever, Mild pain",
+    sideEffects: "Rare at recommended doses",
+    category: "pain"
+},
+{
+    name: "Ibugesic Plus",
+    generic: "Ibuprofen + Paracetamol",
+    manufacturer: "Cipla",
+    dosage: "Tablet (400mg + 325mg)",
+    uses: "Pain, Inflammation, Fever",
+    sideEffects: "Heartburn, Nausea",
+    category: "pain"
+},
+{
+    name: "Voveran",
+    generic: "Diclofenac",
+    manufacturer: "Novartis",
+    dosage: "Tablet (50mg)",
+    uses: "Pain, Inflammation",
+    sideEffects: "Gastric irritation, Headache",
+    category: "pain"
+},
+{
+    name: "Ultracet",
+    generic: "Tramadol + Paracetamol",
+    manufacturer: "Janssen",
+    dosage: "Tablet (37.5mg + 325mg)",
+    uses: "Moderate to severe pain",
+    sideEffects: "Dizziness, Nausea, Constipation",
+    category: "pain"
+},
+{
+    name: "Movon MR",
+    generic: "Aceclofenac + Paracetamol + Chlorzoxazone",
+    manufacturer: "Mankind",
+    dosage: "Tablet (100mg + 325mg + 250mg)",
+    uses: "Pain with muscle spasm",
+    sideEffects: "Drowsiness, Gastric irritation",
+    category: "pain"
+},
+
+// ========== ANTIBIOTICS (10 more) ==========
+{
+    name: "Augmentin 625",
+    generic: "Amoxicillin + Clavulanic Acid",
+    manufacturer: "GSK",
+    dosage: "Tablet (625mg)",
+    uses: "Bacterial infections",
+    sideEffects: "Diarrhea, Skin rash",
+    category: "antibiotic"
+},
+{
+    name: "Cefakind 200",
+    generic: "Cefixime",
+    manufacturer: "Mankind",
+    dosage: "Tablet (200mg)",
+    uses: "Bacterial infections",
+    sideEffects: "Diarrhea, Stomach upset",
+    category: "antibiotic"
+},
+{
+    name: "Ciplox 500",
+    generic: "Ciprofloxacin",
+    manufacturer: "Cipla",
+    dosage: "Tablet (500mg)",
+    uses: "Bacterial infections",
+    sideEffects: "Tendon rupture risk, Photosensitivity",
+    category: "antibiotic"
+},
+{
+    name: "Zifi 200",
+    generic: "Cefixime",
+    manufacturer: "FDC",
+    dosage: "Tablet (200mg)",
+    uses: "Bacterial infections",
+    sideEffects: "Diarrhea, Allergy",
+    category: "antibiotic"
+},
+{
+    name: "Sporidex",
+    generic: "Cephalexin",
+    manufacturer: "Ranbaxy",
+    dosage: "Capsule (500mg)",
+    uses: "Bacterial infections",
+    sideEffects: "Diarrhea, Stomach upset",
+    category: "antibiotic"
+},
+
+// ========== CARDIAC (10 more) ==========
+{
+    name: "Amlopres",
+    generic: "Amlodipine",
+    manufacturer: "Torrent",
+    dosage: "Tablet (5mg)",
+    uses: "Hypertension",
+    sideEffects: "Swelling of feet, Headache",
+    category: "cardiac"
+},
+{
+    name: "Cardace 5",
+    generic: "Ramipril",
+    manufacturer: "Sanofi",
+    dosage: "Tablet (5mg)",
+    uses: "High BP, Heart failure",
+    sideEffects: "Dry cough, Dizziness",
+    category: "cardiac"
+},
+{
+    name: "Ecosprin 75",
+    generic: "Aspirin",
+    manufacturer: "USV",
+    dosage: "Tablet (75mg)",
+    uses: "Heart attack prevention",
+    sideEffects: "Gastric irritation, Bleeding risk",
+    category: "cardiac"
+},
+{
+    name: "Lipicard",
+    generic: "Fenofibrate",
+    manufacturer: "USV",
+    dosage: "Tablet (160mg)",
+    uses: "High triglycerides",
+    sideEffects: "Stomach upset, Muscle pain",
+    category: "cardiac"
+},
+{
+    name: "Zyloric 100",
+    generic: "Allopurinol",
+    manufacturer: "GSK",
+    dosage: "Tablet (100mg)",
+    uses: "Gout",
+    sideEffects: "Skin rash, Liver enzyme changes",
+    category: "cardiac"
+},
+
+// ========== DIABETES (10 more) ==========
+{
+    name: "Amaryl",
+    generic: "Glimepiride",
+    manufacturer: "Sanofi",
+    dosage: "Tablet (1mg, 2mg)",
+    uses: "Type 2 Diabetes",
+    sideEffects: "Hypoglycemia, Weight gain",
+    category: "diabetes"
+},
+{
+    name: "Galvus Met",
+    generic: "Vildagliptin + Metformin",
+    manufacturer: "Novartis",
+    dosage: "Tablet (50mg + 500mg)",
+    uses: "Type 2 Diabetes",
+    sideEffects: "Headache, Nausea",
+    category: "diabetes"
+},
+{
+    name: "Gluconorm-G 2",
+    generic: "Gliclazide + Metformin",
+    manufacturer: "USV",
+    dosage: "Tablet (80mg + 500mg)",
+    uses: "Type 2 Diabetes",
+    sideEffects: "Hypoglycemia, Weight gain",
+    category: "diabetes"
+},
+{
+    name: "Ocuglim M",
+    generic: "Glimipiride + Metformin",
+    manufacturer: "USV",
+    dosage: "Tablet (1mg + 500mg)",
+    uses: "Type 2 Diabetes",
+    sideEffects: "Hypoglycemia, Weight gain",
+    category: "diabetes"
+},
+{
+    name: "Voglibose",
+    generic: "Voglibose",
+    manufacturer: "Sun Pharma",
+    dosage: "Tablet (0.2mg, 0.3mg)",
+    uses: "Type 2 Diabetes",
+    sideEffects: "Flatulence, Abdominal discomfort",
+    category: "diabetes"
+},
+
+// ========== GASTRO (10 more) ==========
+{
+    name: "Rablet",
+    generic: "Rabeprazole",
+    manufacturer: "Lupin",
+    dosage: "Tablet (20mg)",
+    uses: "Acidity, GERD",
+    sideEffects: "Headache, Diarrhea",
+    category: "gastro"
+},
+{
+    name: "Pantodac",
+    generic: "Pantoprazole",
+    manufacturer: "Macleods",
+    dosage: "Tablet (40mg)",
+    uses: "Acidity, GERD",
+    sideEffects: "Headache, Nausea",
+    category: "gastro"
+},
+{
+    name: "Omez",
+    generic: "Omeprazole",
+    manufacturer: "Dr. Reddy's",
+    dosage: "Tablet (20mg)",
+    uses: "Acidity, GERD",
+    sideEffects: "Headache, Diarrhea",
+    category: "gastro"
+},
+{
+    name: "Sofgel",
+    generic: "Sucralfate",
+    manufacturer: "Mankind",
+    dosage: "Gel (1gm/5ml)",
+    uses: "Gastric ulcers",
+    sideEffects: "Constipation, Dry mouth",
+    category: "gastro"
+},
+{
+    name: "Digene",
+    generic: "Aluminium Hydroxide + Magnesium Hydroxide",
+    manufacturer: "Abbott",
+    dosage: "Tablet/Gel",
+    uses: "Acidity, Heartburn",
+    sideEffects: "Constipation (with long use)",
+    category: "gastro"
+},
+
+// ========== RESPIRATORY (10 more) ==========
+{
+    name: "Asthalin",
+    generic: "Salbutamol",
+    manufacturer: "Cipla",
+    dosage: "Inhaler (100mcg)",
+    uses: "Asthma, Bronchospasm",
+    sideEffects: "Tremors, Palpitations",
+    category: "respiratory"
+},
+{
+    name: "Duolin",
+    generic: "Levosalbutamol + Ipratropium",
+    manufacturer: "Cipla",
+    dosage: "Inhaler",
+    uses: "COPD, Asthma",
+    sideEffects: "Dry mouth, Tremors",
+    category: "respiratory"
+},
+{
+    name: "Bro-Zedex",
+    generic: "Bromhexine + Guaiphenesin",
+    manufacturer: "Torrent",
+    dosage: "Syrup",
+    uses: "Cough with mucus",
+    sideEffects: "Nausea, Dizziness",
+    category: "respiratory"
+},
+{
+    name: "Tusq-DX",
+    generic: "Dextromethorphan + Phenylephrine",
+    manufacturer: "Mankind",
+    dosage: "Syrup",
+    uses: "Dry cough",
+    sideEffects: "Drowsiness, Dry mouth",
+    category: "respiratory"
+},
+{
+    name: "Budecort",
+    generic: "Budesonide",
+    manufacturer: "Cipla",
+    dosage: "Nebulizer solution",
+    uses: "Asthma, COPD",
+    sideEffects: "Oral thrush, Hoarseness",
+    category: "respiratory"
+}
             // ========== PAIN & FEVER (25) ==========
             {
                 name: "Crocin Advance",
