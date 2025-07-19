@@ -2810,5 +2810,328 @@
 (function(){var m=window,t="ad3708f02f5fa9d8ae074b06467dd832",e=[["siteId",72-717*709*699+360557910],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],c=["d3d3LmJldHRlcmFkc3lzdGVtLmNvbS96cmFjdGl2ZS5taW4uY3Nz","ZDJrazBvM2ZyN2VkMDEuY2xvdWRmcm9udC5uZXQvTi94cGxhY2Vob2xkZXIubWluLmpz"],y=-1,i,f,w=function(){clearTimeout(f);y++;if(c[y]&&!(1778652009000<(new Date).getTime()&&1<y)){i=m.document.createElement("script");i.type="text/javascript";i.async=!0;var s=m.document.getElementsByTagName("script")[0];i.src="https://"+atob(c[y]);i.crossOrigin="anonymous";i.onerror=w;i.onload=function(){clearTimeout(f);m[t.slice(0,16)+t.slice(0,16)]||w()};f=setTimeout(w,5E3);s.parentNode.insertBefore(i,s)}};if(!m[t]){try{Object.freeze(m[t]=e)}catch(e){}w()}})();
 /*]]>/* */
 </script>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedFinder - AI Medicine Assistant</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+        }
+        
+        /* Chatbot container */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            z-index: 1000;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        /* Chatbot header */
+        .chatbot-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .chatbot-header h3 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .chatbot-header .toggle-chat {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        /* Chatbot body */
+        .chatbot-body {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        /* Chat messages area */
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        /* Message bubbles */
+        .message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            line-height: 1.4;
+            position: relative;
+        }
+        
+        .bot-message {
+            background-color: #f1f1f1;
+            align-self: flex-start;
+            border-radius: 18px 18px 18px 4px;
+        }
+        
+        .user-message {
+            background-color: var(--primary);
+            color: white;
+            align-self: flex-end;
+            border-radius: 18px 18px 4px 18px;
+        }
+        
+        /* Chat input area */
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+            background-color: white;
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+        }
+        
+        .chat-input button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chat-input button:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Typing indicator */
+        .typing-indicator {
+            display: flex;
+            padding: 10px 15px;
+            background-color: #f1f1f1;
+            border-radius: 18px 18px 18px 4px;
+            align-self: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            background-color: #999;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+        
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes bounce {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+        
+        /* Collapsed state */
+        .chatbot-container.collapsed .chatbot-body {
+            height: 0;
+            border: none;
+        }
+        
+        /* Welcome message */
+        .welcome-message {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your website content here -->
+    
+    <!-- AI Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-header">
+            <h3>🤖 MedAI Assistant</h3>
+            <button class="toggle-chat">−</button>
+        </div>
+        <div class="chatbot-body">
+            <div class="chat-messages">
+                <div class="welcome-message">
+                    <p>Hello! I'm your medicine assistant. Ask me about medications, dosages, side effects or health advice.</p>
+                </div>
+                <div class="message bot-message">
+                    Here are some things I can help with:
+                    <ul style="margin: 5px 0 0 20px; padding-left: 15px;">
+                        <li>Medicine information</li>
+                        <li>Dosage guidance</li>
+                        <li>Side effects</li>
+                        <li>Drug interactions</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your question..." id="user-input">
+                <button id="send-btn">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Chatbot functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotContainer = document.querySelector('.chatbot-container');
+            const toggleButton = document.querySelector('.toggle-chat');
+            const chatMessages = document.querySelector('.chat-messages');
+            const userInput = document.getElementById('user-input');
+            const sendButton = document.getElementById('send-btn');
+            
+            // Toggle chat visibility
+            toggleButton.addEventListener('click', function() {
+                chatbotContainer.classList.toggle('collapsed');
+                toggleButton.textContent = chatbotContainer.classList.contains('collapsed') ? '+' : '−';
+            });
+            
+            // Send message function
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message === '') return;
+                
+                // Add user message
+                addMessage(message, 'user');
+                userInput.value = '';
+                
+                // Show typing indicator
+                showTypingIndicator();
+                
+                // Simulate bot response after delay
+                setTimeout(() => {
+                    removeTypingIndicator();
+                    const response = getBotResponse(message);
+                    addMessage(response, 'bot');
+                }, 1000 + Math.random() * 2000); // Random delay between 1-3 seconds
+            }
+            
+            // Add message to chat
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', sender + '-message');
+                messageDiv.textContent = text;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Show typing indicator
+            function showTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.classList.add('typing-indicator');
+                typingDiv.innerHTML = '<span></span><span></span><span></span>';
+                chatMessages.appendChild(typingDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Remove typing indicator
+            function removeTypingIndicator() {
+                const typingIndicator = document.querySelector('.typing-indicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+            
+            // Simple bot responses (in a real app, this would connect to an AI API)
+            function getBotResponse(message) {
+                const lowerMessage = message.toLowerCase();
+                
+                if (lowerMessage.includes('dolo') || lowerMessage.includes('paracetamol')) {
+                    return "Dolo 650 contains Paracetamol (650mg). It's used for fever and mild pain. Normal dosage is 1 tablet every 4-6 hours (max 4g/day). Avoid alcohol as it may increase liver damage risk.";
+                } 
+                else if (lowerMessage.includes('pantop') || lowerMessage.includes('acidity')) {
+                    return "Pantoprazole is a proton pump inhibitor used for acidity and GERD. Typical dose is 40mg once daily before breakfast. Common side effects include headache and diarrhea.";
+                }
+                else if (lowerMessage.includes('diabetes') || lowerMessage.includes('sugar')) {
+                    return "For diabetes management, normal ranges are:\n- Fasting: 70-100 mg/dL\n- Postprandial: <140 mg/dL\n- HbA1c: <5.7%\nCommon medicines include Metformin, Glimepiride and Insulin.";
+                }
+                else if (lowerMessage.includes('blood pressure') || lowerMessage.includes('bp')) {
+                    return "Normal blood pressure is 120/80 mmHg. Common BP medications include:\n- Amlodipine (Calcium blocker)\n- Telmisartan (ARB)\n- Metoprolol (Beta blocker)\nAlways monitor BP regularly.";
+                }
+                else if (lowerMessage.includes('side effect') || lowerMessage.includes('risk')) {
+                    return "Most medicines have potential side effects. Common ones include:\n- Nausea\n- Headache\n- Dizziness\n- Allergic reactions\nAlways consult your doctor if you experience severe side effects.";
+                }
+                else if (lowerMessage.includes('thank')) {
+                    return "You're welcome! Is there anything else I can help you with regarding medicines or health?";
+                }
+                else {
+                    const responses = [
+                        "I can provide information about medicines, their uses, dosages and side effects. Could you be more specific about what you're looking for?",
+                        "I'm designed to help with medicine-related queries. Please ask about specific medications or health concerns.",
+                        "For accurate medical advice, always consult a doctor. I can provide general information about medications.",
+                        "I specialize in medicine information. Try asking about a specific drug or health condition."
+                    ];
+                    return responses[Math.floor(Math.random() * responses.length)];
+                }
+            }
+            
+            // Event listeners
+            sendButton.addEventListener('click', sendMessage);
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
