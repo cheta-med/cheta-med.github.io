@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medsera - Trusted Medicine Info</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors">
+
+  <!-- Navbar -->
+  <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">Medsera</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+        <button onclick="toggleDarkMode()" class="bg-gray-200 dark:bg-gray-700 px-2 py-1 rounded">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-20 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-gray-800 dark:to-gray-700">
+    <h2 class="text-4xl font-bold mb-4">Search Any Medicine Instantly</h2>
+    <p class="text-lg mb-6">Get trusted uses, dosage, side effects & more</p>
+    <form action="search.html" method="get" class="max-w-xl mx-auto flex">
+      <input name="q" type="text" placeholder="Enter medicine name..." class="flex-1 px-4 py-2 rounded-l border-2 border-blue-500" />
+      <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-r">Search</button>
+    </form>
+  </section>
+
+  <!-- Info Grid -->
+  <section class="py-16 px-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+    <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+      <h3 class="text-xl font-semibold mb-2">💊 Detailed Information</h3>
+      <p>Each medicine comes with verified uses, dosage, warnings, and side effects.</p>
+    </div>
+    <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+      <h3 class="text-xl font-semibold mb-2">📦 Verified by Experts</h3>
+      <p>We follow WHO and IMA standards for all medicine entries and updates.</p>
+    </div>
+    <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+      <h3 class="text-xl font-semibold mb-2">🔐 Safe & Transparent</h3>
+      <p>We care about your data privacy and adhere to strict policies and transparency.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="text-center py-16 bg-blue-50 dark:bg-gray-800">
+    <h2 class="text-2xl font-bold mb-4">Building India's Most Trusted Medicine Platform</h2>
+    <p class="mb-6">Join over 10,000 monthly users who rely on Medsera</p>
+    <a href="about.html" class="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Learn More</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-900 text-center text-sm py-6 mt-8 border-t dark:border-gray-700">
+    <div class="space-x-4">
+      <a href="privacy.html" class="hover:underline">Privacy Policy</a>
+      <a href="terms.html" class="hover:underline">Terms & Conditions</a>
+      <a href="disclaimer.html" class="hover:underline">Disclaimer</a>
+      <a href="contact.html" class="hover:underline">Contact</a>
+    </div>
+    <p class="mt-4">&copy; 2025 Medsera. Made with ❤️ in India.</p>
+  </footer>
+</body>
+</html>
