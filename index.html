@@ -51,22 +51,32 @@
       flex: 1 1 600px;
       background: white;
       border-radius: 10px;
-      padding: 20px;
-      text-align: center;
+      padding: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 0.88rem;
     }
 
     .box h2 {
       color: var(--primary);
-      margin-bottom: 15px;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 10px;
     }
 
     iframe {
       width: 100%;
-      height: 600px;
+      height: 700px;
       border: none;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      font-size: 14px;
+    }
+
+    .box ul {
+      padding: 10px 20px;
+    }
+
+    .box ul li {
+      margin-bottom: 8px;
     }
 
     footer {
@@ -75,10 +85,6 @@
       text-align: center;
       border-top: 1px solid #ccc;
       font-size: 14px;
-    }
-
-    footer h3 {
-      margin-bottom: 10px;
     }
 
     .footer-links a {
@@ -97,7 +103,7 @@
         align-items: center;
       }
       iframe {
-        height: 500px;
+        height: 600px;
       }
     }
   </style>
@@ -110,18 +116,30 @@
   </header>
 
   <div class="main-content">
-    <!-- Finder Column with embedded med.html -->
+    <!-- Finder Column -->
     <div class="box">
       <h2>🔍 Finder</h2>
-      <p>Explore 500+ Indian medicines</p>
       <iframe src="med.html"></iframe>
     </div>
 
-    <!-- Creams Column -->
+    <!-- Facial Creams Column -->
     <div class="box">
-      <h2>🧴 Creams</h2>
-      <p>Find skincare solutions for tanning, acne, and more</p>
-      <button disabled style="background:#ccc; cursor: not-allowed;">Coming Soon</button>
+      <h2>🧴 Facial Creams</h2>
+      <p style="text-align:center; font-size: 0.95rem;">Top recommended creams for glowing, healthy skin</p>
+      <ul style="text-align: left; margin-top: 20px; font-size: 0.9rem; line-height: 1.8;">
+        <li><strong>Pond's White Beauty</strong> – Fairness & Glow | <em>Pond's</em></li>
+        <li><strong>Himalaya Clear Complexion Cream</strong> – Lightens spots | <em>Himalaya</em></li>
+        <li><strong>Nivea Soft</strong> – Deep Moisturizing Cream | <em>Nivea</em></li>
+        <li><strong>Lacto Calamine</strong> – Oil Control & Acne | <em>Piramal</em></li>
+        <li><strong>Fair & Lovely (Glow & Lovely)</strong> – Skin Brightening | <em>Unilever</em></li>
+        <li><strong>Garnier Bright Complete</strong> – Vitamin C & Fairness | <em>Garnier</em></li>
+        <li><strong>Vicco Turmeric Cream</strong> – Antiseptic & Glowing Skin | <em>Vicco</em></li>
+        <li><strong>Biotique Bio Coconut</strong> – Whitening & Nourishing | <em>Biotique</em></li>
+        <li><strong>Lotus Herbal WhiteGlow</strong> – Brightening & Radiance | <em>Lotus Herbals</em></li>
+        <li><strong>Derma Co Cream</strong> – Anti-acne & Skin Repair | <em>Derma Co</em></li>
+        <li><strong>Olay Natural White</strong> – Fairness & Spot Removal | <em>Olay</em></li>
+        <li><strong>mCaffeine Coffee Cream</strong> – Brightens & Hydrates | <em>mCaffeine</em></li>
+      </ul>
     </div>
   </div>
 
@@ -139,5 +157,3 @@
 
 </body>
 </html>
-
-  
