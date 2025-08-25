@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,6 +71,42 @@
       color: #333;
       line-height: 1.6;
     }
+    .articles-list {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .articles-list h2 {
+      text-align: center;
+      color: #3a0ca3;
+      margin-bottom: 20px;
+    }
+    .articles-list input[type="search"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .articles-list ul {
+      list-style: none;
+      padding: 0;
+    }
+    .articles-list li {
+      margin: 12px 0;
+      font-size: 16px;
+    }
+    .articles-list a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .articles-list a:hover {
+      text-decoration: underline;
+    }
     footer {
       background: #eee;
       padding: 30px 20px;
@@ -91,6 +126,23 @@
       text-decoration: underline;
     }
   </style>
+  <script>
+    function filterArticles() {
+      let input = document.getElementById('articleSearch');
+      let filter = input.value.toLowerCase();
+      let list = document.getElementById('articleList');
+      let items = list.getElementsByTagName('li');
+      for (let i = 0; i < items.length; i++) {
+        let a = items[i].getElementsByTagName('a')[0];
+        let txtValue = a.textContent || a.innerText;
+        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+          items[i].style.display = "";
+        } else {
+          items[i].style.display = "none";
+        }
+      }
+    }
+  </script>
 </head>
 <body>
   <!-- Capsule Image Banner -->
@@ -110,10 +162,47 @@
     <p>Click here to explore 500+ Indian medicines in a new tab</p>
   </div>
 
+  <!-- New Articles Section -->
+  <div class="articles-list">
+    <h2>📚 Medicine Guides</h2>
+    <input type="search" id="articleSearch" placeholder="Search articles..." onkeyup="filterArticles()">
+    <ul id="articleList">
+      <li><a href="articles/how-to-read-a-medicine-label-india.html">How to Read a Medicine Label (India)</a></li>
+      <li><a href="articles/paracetamol-vs-ibuprofen.html">Paracetamol vs Ibuprofen: What’s the Difference?</a></li>
+      <li><a href="articles/why-generic-medicines-are-cheaper.html">Why Generic Medicines Are Cheaper</a></li>
+      <li><a href="articles/antibiotics-dos-donts.html">Antibiotics: Dos and Don’ts</a></li>
+      <li><a href="articles/over-the-counter-medicines-india.html">Over-the-Counter Medicines in India</a></li>
+      <li><a href="articles/cold-flu-medicines-guide.html">Cold and Flu Medicines: A Quick Guide</a></li>
+      <li><a href="articles/painkiller-safety-tips.html">Painkiller Safety Tips</a></li>
+      <li><a href="articles/schedule-h-explained.html">Schedule H Medicines Explained</a></li>
+      <li><a href="articles/monsoon-medicine-storage.html">Monsoon Medicine Storage Tips</a></li>
+      <li><a href="articles/otc-cough-syrup-safety.html">OTC Cough Syrup Safety</a></li>
+      <li><a href="articles/antibiotic-resistance-basics.html">Antibiotic Resistance Basics</a></li>
+      <li><a href="articles/check-batch-and-expiry.html">How to Check Batch & Expiry</a></li>
+      <li><a href="articles/bp-medicines-overview.html">Blood Pressure Medicines Overview</a></li>
+      <li><a href="articles/metformin-basics.html">Metformin Basics</a></li>
+      <li><a href="articles/omeprazole-basics.html">Omeprazole (PPI) Basics</a></li>
+      <li><a href="articles/cetirizine-facts.html">Cetirizine Facts</a></li>
+      <li><a href="articles/ors-right-way.html">ORS: The Right Way</a></li>
+      <li><a href="articles/when-to-see-a-doctor.html">When to See a Doctor</a></li>
+      <li><a href="articles/online-pharmacy-safety.html">Online Pharmacy Safety</a></li>
+      <li><a href="articles/adr-reporting-pvpi.html">Adverse Drug Reaction Reporting</a></li>
+      <li><a href="articles/pregnancy-medicine-safety.html">Medicine Safety in Pregnancy</a></li>
+      <li><a href="articles/how-to-use-an-inhaler.html">How to Use an Inhaler</a></li>
+      <li><a href="articles/insulin-storage.html">Insulin Storage & Handling</a></li>
+      <li><a href="articles/painkiller-safety-teens.html">Painkiller Safety for Teens</a></li>
+      <li><a href="articles/ayush-vs-allopathic.html">AYUSH vs Allopathic: What to Know</a></li>
+      <li><a href="articles/dpco-mrp-price.html">Medicine Prices in India: MRP & DPCO</a></li>
+      <li><a href="articles/find-substitutes-by-salt.html">Find Substitutes by Salt Name</a></li>
+      <li><a href="articles/medicine-cabinet-checklist.html">Home Medicine Cabinet Checklist</a></li>
+    </ul>
+  </div>
+
   <div class="info-box">
     <h3>🌿 Featured Blog: Natural Skincare for Indian Skin</h3>
     <p>Taking care of your skin doesn't always require expensive products. Natural remedies like turmeric, aloe vera, and coconut oil are known to improve skin tone and texture. At Medsera, we also recommend trusted Ayurvedic and dermatological creams reviewed for Indian skin types. Stay tuned for more!</p>
   </div>
+
   <!-- Medsera FAQ Section -->
 <section style="padding: 50px 20px; background: #ffffff;">
   <h2 style="color: #3a0ca3; text-align:center;">Frequently Asked Questions (FAQs)</h2>
@@ -163,51 +252,6 @@
       <a href="cookie.html" target="_blank">Cookie Policy</a>
       <a href="blog.html" target="_blank">Blog</a>
     </div>
-    <!-- Blog Highlights Section -->
-<section style="padding: 40px 20px; background: #f9f9f9;">
-  <h2 style="text-align: center; color: #3a0ca3;">Latest Health & Skincare Blogs</h2>
-  <div style="max-width: 900px; margin: auto; font-size: 16px; color: #333;">
-    <ul style="list-style: none; padding: 0;">
-      <li style="margin: 15px 0;">
-        🔹 <strong><a href="#">5 Best Creams for Acne-Prone Skin</a></strong> – Learn which ingredients work best and why.
-      </li>
-      <li style="margin: 15px 0;">
-        🔹 <strong><a href="#">What to Take for Fever: Paracetamol or Ibuprofen?</a></strong> – Medicine guide you must know.
-      </li>
-      <li style="margin: 15px 0;">
-        🔹 <strong><a href="#">Top 10 Skincare Tips for Indian Summers</a></strong> – Dermatologist-recommended routine.
-      </li>
-      <li style="margin: 15px 0;">
-        🔹 <strong><a href="#">Best Over-the-Counter Cold Medicines in India</a></strong> – Safe and effective choices.
-      </li>
-      <li style="margin: 15px 0;">
-        🔹 <strong><a href="#">How to Read a Medicine Prescription</a></strong> – Simple explanation for everyone.
-      </li>
-    </ul>
-  </div>
-</section>
-    <!-- Ask Us Section -->
-<section style="text-align: center; padding: 40px; background: #eef9f1;">
-  <h2 style="color: #2e7d32;">Have a Question?</h2>
-  <p>Want to know more about a cream, tablet, or health tip? We’ll help!</p>
-</section>
-
-<!-- Ask Us Contact Form -->
-<section style="padding: 30px; background: #fff;">
-  <h2 style="text-align:center; color:#3a0ca3;">Ask Us Anything</h2>
-  <form action="mailto:medsera48@gmail.com" method="post" enctype="text/plain" style="max-width:600px; margin:auto;">
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin:8px 0;"><br>
-    
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required style="width:100%; padding:10px; margin:8px 0;"><br>
-    
-    <label for="message">Your Question:</label><br>
-    <textarea id="message" name="message" rows="5" required style="width:100%; padding:10px; margin:8px 0;"></textarea><br>
-
-    <input type="submit" value="Send" style="background:#3a0ca3; color:#fff; border:none; padding:10px 20px; border-radius:5px; cursor:pointer;">
-  </form>
-</section>
     <p>&copy; 2025 Medsera. All rights reserved.</p>
   </footer>
 
